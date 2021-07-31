@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="description" content="The Overflowing church website's main page" />
+
+  <meta name="author" content="unikys@gmail.com" />
+
+  <title>Document</title>
+
+  <style media="screen">
+
+    #topMenu {
+                height: 30px;
+                width: 850px;
+        }
+        #topMenu ul {           /* 메인 메뉴 안의 ul을 설정함: 상위메뉴의 ul+하위 메뉴의 ul */
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        #topMenu ul li {            /* 메인 메뉴 안에 ul 태그 안에 있는 li 태그의 스타일 적용(상위/하위메뉴 모두) */
+            color: white;
+            background-color: #2d2d2d;
+            float: left;
+            line-height: 30px;
+            vertical-align: middle;
+            text-align: center;
+            position: relative;
+        }
+        .menuLink, .submenuLink {           /* 상위 메뉴와 하위 메뉴의 a 태그에 공통으로 설정할 스타일 */
+            text-decoration:none;
+            display: block;
+            width: 150px;
+            font-size: 12px;
+            font-weight: bold;
+            font-family: "Trebuchet MS", Dotum;
+        }
+        .menuLink {     /* 상위 메뉴의 글씨색을 흰색으로 설정 */
+            color: white;
+        }
+        .topMenuLi:hover .menuLink {    /* 상위 메뉴의 li에 마우스오버 되었을 때 스타일 설정 */
+            color: red;
+            background-color: #4d4d4d;
+        }
+        .longLink {     /* 좀 더 긴 메뉴 스타일 설정 */
+            width: 190px;
+        }
+
+    : 그리고 달라지는 CSS는 바로 submenu가 이제 더이상 세로로 펼쳐지는 것이 아니라 가로로 펼쳐지기 때문에 높이에 대한 설정을 변경해주고, 가로에 대한 값도 변경해주면 된다. 변경한 내용은 아래에 표시를 하였다. 이렇게 간단하게 몇가지만 수정하고도 아주 간단하게 수정이 가능하다. 이렇게 수정한 결과는 아래와 같다.
+
+        .submenuLink {          /* 하위 메뉴의 a 태그 스타일 설정 */
+            color: #2d2d2d;
+            background-color: white;
+            border: solid 1px black;
+            margin-right: -1px;         /* [변경] 위 칸의 하단 테두리와 아래칸의 상단 테두리가 겹쳐지도록 설덩 */
+        }
+        .submenu {              /* 하위 메뉴 스타일 설정 */
+            position: absolute;
+            height: 0px;
+            overflow: hidden;
+            transition: height .2s;
+            -webkit-transition: height .2s;
+            -moz-transition: height .2s;
+            -o-transition: height .2s;
+            width: 574px;           /* [변경] 가로 드랍다운 메뉴의 넓이 */
+        }
+        .submenu li {
+            display: inline-block;  /* [변경] 가로로 펼쳐지도록 설정 */
+        }
+        .topMenuLi:hover .submenu { /* 상위 메뉴에 마우스 모버한 경우 그 안의 하위 메뉴 스타일 설정 */
+            height: 32px;           /* [변경] 높이를 32px로 설정 */
+        }
+        .submenuLink:hover {        /* 하위 메뉴의 a 태그의 마우스 오버 스타일 설정 */
+            color: red;
+            background-color: #dddddd;
+        }
+
+
+
+
+  body {
+
+    margin: 0px; <!-- 언제나 전체 body에는 margin 값을 0으로 세팅해준다-->
+
+    font-size: 18px;
+
+    color: #FFF;
+
+}
+
+#box {
+
+    position: relative;
+
+    height: auto;
+
+    margin: auto; <!-- 레이아웃을 싸고 있는 box의 margin을 auto로 주면 중앙정렬 효과-->
+
+    background-color: #F90;
+
+}
+
+#top {
+
+    background-color: #333;
+
+    height: 500px;
+
+    position: relative;
+
+}
+
+#left {
+
+    background-color: #09C;
+
+    float: left;
+
+    height: 500px;
+
+    width: 50%;
+
+    position: relative;
+
+}
+
+#main {
+
+    background-color: #3C0;
+
+    float: left;
+
+    height: 500px;
+
+    width: 50%;
+
+    position: relative;
+
+}
+
+#bottom {
+
+    background-color: #C0F;
+
+    height: 70px;
+
+    position: relative;
+
+    clear: both; <!-- 상단의 흐름을 한번 끊어주기 위해 clear를 해준다.. -.-;;?? -->
+
+    float: left; <!-- 새로운 흐름을 지정해줘야 깨지지 않는다-->
+
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <div id="box">
+
+		<div id="top">top</div>
+
+		<div id="left">left</div>
+
+		<div id="main">main</div>
+
+		<div id="bottom">bottom</div>
+
+
+    <div id="topMenu" >
+    		<ul>
+    			<li><a class="menuLink" href="http://unikys.tistory.com/category/Programming%20Lecture/%EB%B0%91%EB%B0%94%EB%8B%A5%EB%B6%80%ED%84%B0%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%A7%8C%EB%93%A4%EA%B8%B0">LECTURES</a></li>
+    			<li>|</li>
+    			<li><a class="menuLink" href="http://unikys.tistory.com/guestbook">GUEST BOOK</a></li>
+    			<li>|</li>
+    			<li><a class="menuLink" href="http://unikys.tistory.com/tag">TAG CLOUD</a></li>
+    			<li>|</li>
+    			<li><a class="menuLink" href="http://unikys.tistory.com/media">MEDIA LOG</a></li>
+    			<li>|</li>
+    			<li><a class="menuLink" href="http://unikys.tistory.com/location">LOCATION LOG</a></li>
+    		</ul>
+    	</div>
+	</div>
+
+</body>
+
+</html

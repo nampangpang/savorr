@@ -1,0 +1,4 @@
+#topMenu { height: 30px; width: 850px; } #topMenu ul { /* 메인 메뉴 안의 ul을 설정함: 상위메뉴의 ul+하위 메뉴의 ul */ list-style-type: none; margin: 0px; padding: 0px; } #topMenu ul li { /* 메인 메뉴 안에 ul 태그 안에 있는 li 태그의 스타일 적용(상위/하위메뉴 모두) */ color: white; background-color: #2d2d2d; float: left; line-height: 30px; vertical-align: middle; text-align: center; position: relative; } .menuLink, .submenuLink { /* 상위 메뉴와 하위 메뉴의 a 태그에 공통으로 설정할 스타일 */ text-decoration:none; display: block; width: 150px; font-size: 12px; font-weight: bold; font-family: "Trebuchet MS", Dotum; } .menuLink { /* 상위 메뉴의 글씨색을 흰색으로 설정 */ color: white; } .topMenuLi:hover .menuLink { /* 상위 메뉴의 li에 마우스오버 되었을 때 스타일 설정 */ color: red; background-color: #4d4d4d; } .longLink { /* 좀 더 긴 메뉴 스타일 설정 */ width: 190px; }
+h1 {
+  text-align: center;
+}

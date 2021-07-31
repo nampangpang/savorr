@@ -1,0 +1,52 @@
+#grid{
+  display:grid;
+  border: 1px solid black;
+  grid-template-columns: 100px 1fr;
+}
+div{
+  border:1px solid gray;
+}
+@media(max-width: 700px) {
+  #grid{
+    display: block;
+  }
+  div{
+    border:none;
+  }
+  h1 {
+    font-size: none;
+    border-bottom: none;
+    padding:0px;
+    margin:0px;
+    display: block;
+  }
+  #grid ol{
+  border-right:none;
+}
+}
+body{
+margin :0;
+}
+h1 {
+  font-size: 60px;
+  border-bottom: 3px solid purple;
+  padding:20px;
+  margin:0px;
+  display: block;
+
+}
+h1, h2  {
+  text-align: center;
+  }
+  p {
+    margin:5px;
+  }
+#grid ol{
+border-right:1px solid gray;
+width: 100px;
+margin: 0px;
+padding: 0px;
+}
+#article{
+padding-left: 15px;
+}
